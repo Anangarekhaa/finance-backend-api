@@ -1,0 +1,29 @@
+# environment
+.env
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# database
+*.db
+test.db
+
+# alembic
+migrations/versions/
+
+# testing
+.pytest_cache/
+htmlcov/
+.coverage
+
+# docker
+postgres_data/
+
+# ide
+.vscode/
+.idea/
+
+# os
+.DS_Store
+Thumbs.db
