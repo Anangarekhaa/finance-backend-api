@@ -167,6 +167,8 @@ Depends(require_role([Role.admin, Role.analyst]))
 | PATCH | `/records/{id}` | Update record (admin only) |
 | DELETE | `/records/{id}` | Soft delete record (admin only) |
 
+Records are returned in descending order of date (most recent first) by default.
+
 **Filter/search query params (analyst + admin):**
 ```
 ?type=income
