@@ -304,6 +304,13 @@ pytest tests/test_api.py -v
 
 A seed script is provided to populate sample users and financial records for testing and demonstration, creating 5 users and 35 financial records spanning 6 months across realistic categories.
 
+| Email | Password | Role |
+|---|---|---|
+| admin@finance.com | admin123 | admin |
+| alice@finance.com | alice123 | analyst |
+| charlie@finance.com | charlie123 | analyst |
+| bob@finance.com | bob123 | viewer |
+| diana@finance.com | diana123 | viewer (inactive) |
 
 ---
 
