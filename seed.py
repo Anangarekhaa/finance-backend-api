@@ -3,11 +3,18 @@ from app.models import Base, User, FinancialRecord
 from app.routers.auth import hash_password
 from app.enums import Role, TransactionType
 from datetime import date
+from sqlalchemy import text
 
 
 Base.metadata.create_all(bind=engine)
 
 db = SessionLocal()
+
+existing = db.query(User).first()
+if existing:
+    print("⚠️  Database already seeded, skipping.")
+    db.close()
+    exit()
 
 
 users = [
