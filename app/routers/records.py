@@ -24,12 +24,10 @@ def get_records(
     page: int = Query(1, ge=1),
     limit: int = Query(10, ge=1, le=100),
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(require_role([Role.analyst, Role.admin]))
 ):
     
-    if current_user.role == Role.viewer:
-        if any([type, category, start_date, end_date, search]):
-            raise HTTPException(status_code=403, detail="Viewers cannot apply filters or search")
+
 
     query = db.query(FinancialRecord).join(User, FinancialRecord.created_by == User.id).filter(FinancialRecord.is_deleted == False)
 
